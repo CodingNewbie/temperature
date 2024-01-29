@@ -31,6 +31,12 @@ body{
     background-color: var(--background-color);
 }
 
+@media(max-width: 480px){
+    body{
+        background-size: 300% auto;
+    }
+}
+
 sup{
     font-size: 3rem;
     padding-bottom: 1.5rem
@@ -79,12 +85,22 @@ button{
     align-items: center;
     height: 50%;
 }
+
 .temp-conversion-flex{
     display: flex;
     border: 5px solid var(--primary-color);
     border-radius: 1rem;
     height: 40rem;
     width: 75rem;
+}
+
+@media(max-width: 480px){
+    .temp-conversion-flex{
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
 }
 
 .temp-form{
@@ -98,6 +114,12 @@ button{
     align-items: flex-start;
     gap: 2rem;
     padding: 0 5rem 0 3rem;
+}
+
+@media(max-width: 480px){
+    .temp-input h1{
+        margin: 0 auto;
+    }
 }
 
 .degree-inline input,
@@ -150,6 +172,13 @@ select::placeholder{
     align-items: center;
     width: 100%;
 }
+
+@media(max-width: 480px){
+    .btn-flex{
+        margin-bottom: 2rem;
+    }
+}
+
 .temp-output{
     width: 37.5rem;
     display: flex;
@@ -158,6 +187,13 @@ select::placeholder{
     background-color: var(--primary-color);
     color: white;
     font-size: 5rem;
+}
+
+@media(max-width: 480px){
+    .temp-output{
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .output{
