@@ -1,11 +1,19 @@
 let unitSupF = "°F";
 let unitSupC = "°C";
 let convertBtn = document.getElementById("convert-btn");
+let inputField = document.getElementById("input-temp")
+
 convertBtn.addEventListener("click", convertTemp);
+
+inputField.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        convertTemp();
+    }
+});
 
 function convertTemp(){
     let inputTemp = Number(document.getElementById("input-temp").value);
-    
+
     if(isNaN(inputTemp)){
         document.getElementById("output").innerHTML = "Please enter a valid number.";
         document.getElementById("unit-sup").remove();
