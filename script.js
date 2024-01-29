@@ -22,13 +22,11 @@ function convertTemp(){
 
     else if (document.getElementById("unit").value == "celsius"){
         if (document.getElementById("convert-to").value == "fahrenheit"){
-            let inputTemp = Number(document.getElementById("input-temp").value);
             let outputTemp = ((inputTemp * (9/5) + 32)).toFixed(1);
             document.getElementById("output").innerHTML = outputTemp;
             document.getElementById("unit-sup").innerHTML = unitSupF;
         }
         else{
-            let inputTemp = Number(document.getElementById("input-temp").value);
             let outputTemp = inputTemp;
             document.getElementById("output").innerHTML = outputTemp;
             document.getElementById("unit-sup").innerHTML = unitSupC;
@@ -36,13 +34,11 @@ function convertTemp(){
     }
     else if (document.getElementById("unit").value == "fahrenheit"){
         if (document.getElementById("convert-to").value == "celsius"){
-            let inputTemp = Number(document.getElementById("input-temp").value);
-            let outputTemp = ((inputTemp - 32) * 5 / 9).toFixed(1);
+            let outputTemp = ((inputTemp - 32) * 5/9).toFixed(1);
             document.getElementById("output").innerHTML = outputTemp;
             document.getElementById("unit-sup").innerHTML = unitSupC;
         }
         else{
-            let inputTemp = Number(document.getElementById("input-temp").value);
             let outputTemp = inputTemp;
             document.getElementById("output").innerHTML = outputTemp;
             document.getElementById("unit-sup").innerHTML = unitSupF;
