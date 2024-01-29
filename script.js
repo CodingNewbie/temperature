@@ -16,7 +16,7 @@ function convertTemp(){
 
     if(isNaN(inputTemp)){
         document.getElementById("output").innerHTML = "Please enter a valid number.";
-        document.getElementById("unit-sup").remove();
+        document.getElementById("unit-sup").innerHTML = "";
         return;
     }
 
@@ -32,6 +32,7 @@ function convertTemp(){
             document.getElementById("unit-sup").innerHTML = unitSupC;
         }
     }
+
     else if (document.getElementById("unit").value == "fahrenheit"){
         if (document.getElementById("convert-to").value == "celsius"){
             let outputTemp = ((inputTemp - 32) * 5/9).toFixed(1);
