@@ -98,7 +98,7 @@ button{
     .temp-conversion-flex{
         flex-direction: column;
         width: 90%;
-        height: 100%;
+        height: 50rem;
         margin: 0 auto;
         margin-top: 2rem;
     }
