@@ -4,6 +4,13 @@ let convertBtn = document.getElementById("convert-btn");
 convertBtn.addEventListener("click", convertTemp);
 
 function convertTemp(){
+    let inputTemp = Number(document.getElementById("input-temp").value);
+    if(isNaN(inputTemp)){
+        document.getElementById("output").innerHTML = "Please enter a valid number.";
+        document.getElementById("unit-sup").remove();
+        return;
+    }
+
     if (document.getElementById("unit").value == "celsius"){
         if (document.getElementById("convert-to").value == "fahrenheit"){
             let inputTemp = Number(document.getElementById("input-temp").value);

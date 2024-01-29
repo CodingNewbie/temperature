@@ -160,4 +160,8 @@ select::placeholder{
     font-size: 5rem;
 }
 
+.output{
+    text-align: center;
+}
+
 
