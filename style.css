@@ -125,6 +125,10 @@ button{
     }
 }
 
+.degree-inline{
+    width: 100%;
+}
+
 .degree-inline input,
 .degree-inline select,
 .convert-div select{
