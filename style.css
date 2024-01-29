@@ -1,0 +1,163 @@
+:root{
+    --background-color: #DDEDFA;
+    --primary-color: #44626A;
+}
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-image: url(img/background.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-color: var(--background-color);
+}
+
+sup{
+    font-size: 3rem;
+    padding-bottom: 1.5rem
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+input{
+    font: inherit;
+}
+
+p, h1, h2, h3{
+    overflow-wrap: break-word;
+}
+
+h1{
+    color: var(--primary-color);
+    font-size: 3rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+label{
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+button{
+    display: inline-block;
+    width: 14rem;
+    font-size: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.main-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+.temp-conversion-flex{
+    display: flex;
+    border: 5px solid var(--primary-color);
+    border-radius: 1rem;
+    height: 40rem;
+    width: 75rem;
+}
+
+.temp-form{
+    width: 100%;
+}
+.temp-input{
+    width: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 0 5rem 0 3rem;
+}
+
+.degree-inline input,
+.degree-inline select,
+.convert-div select{
+    border: 1px solid var(--primary-color);
+    height: 4rem;
+    vertical-align: middle;
+    background-color: var(--background-color);
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.degree-inline input{
+    border-radius: .5rem 0 0 .5rem;
+    width: 84.1%;
+    margin-right: -.5rem
+}
+.degree-inline select{
+    border-radius: 0 .5rem .5rem 0;
+}
+
+.convert-div select{
+    width: 100%;
+    border-radius: .5rem
+}
+
+.temp-form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+label{
+    display: block;
+}
+
+#unit, #temp{
+    display: inline-block;
+}
+
+input,
+select::placeholder{
+    padding-left: 1rem;
+}
+
+.btn-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.temp-output{
+    width: 37.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 5rem;
+}
+
+

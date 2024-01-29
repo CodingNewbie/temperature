@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="main-flex">
+        <div class="temp-conversion-flex">
+            <div class="temp-input">
+                <h1>Enter Temperature</h1>
+                <div class="temp-form">
+                    
+                    <div class="degree-inline">
+                        <label for="degree">Degree</label>
+                        <input type="number" id="input-temp" placeholder="0">
+                        <select id="unit">
+                            <option value="celsius">°C</option>
+                            <option value="fahrenheit">°F</option>
+                        </select>
+                    </div>
+                    <div class="convert-div">
+                        <label for="convert-to">Convert To</label>
+                        <select id="convert-to">
+                            <option value="fahrenheit">Fahrenheit (°F)</option>
+                            <option value="celsius">Celsius (°C)</option>
+                        </select>
+                    </div>
+                    <div class="btn-flex">
+                        <button id="convert-btn">Convert &#8594;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="temp-output">
+                <p class="output" id="output">0</p>
+                <sup id="unit-sup">°F</sup>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
