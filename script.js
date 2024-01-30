@@ -1,7 +1,12 @@
 let unitSupF = "°F";
 let unitSupC = "°C";
 let convertBtn = document.getElementById("convert-btn");
-let inputField = document.getElementById("input-temp")
+let inputTemp = document.getElementById("input-temp");
+let inputField = document.getElementById("input-temp");
+let output = document.getElementById("output");
+let unitSup = document.getElementById("unit-sup");
+let convertTo = document.getElementById("convert-to");
+let unit = document.getElementById("unit");
 
 convertBtn.addEventListener("click", convertTemp);
 
@@ -12,38 +17,37 @@ inputField.addEventListener("keypress", function (event) {
 });
 
 function convertTemp(){
-    let inputTemp = Number(document.getElementById("input-temp").value);
+    let inputValue = Number(inputTemp.value);
 
-    if(isNaN(inputTemp)){
-        document.getElementById("output").innerHTML = "Please enter a valid number.";
-        document.getElementById("unit-sup").innerHTML = "";
+    if(isNaN(inputValue)){
+        output.innerHTML = "Please enter a valid number.";
+        unitSup.innerHTML = "";
         return;
     }
 
-    else if (document.getElementById("unit").value == "celsius"){
-        if (document.getElementById("convert-to").value == "fahrenheit"){
-            let outputTemp = ((inputTemp * (9/5) + 32)).toFixed(1);
-            document.getElementById("output").innerHTML = outputTemp;
-            document.getElementById("unit-sup").innerHTML = unitSupF;
+    else if (unit.value == "celsius"){
+        if (convertTo.value == "fahrenheit"){
+            let outputTemp = ((inputValue * (9/5) + 32)).toFixed(1);
+            output.innerHTML = outputTemp;
+            unitSup.innerHTML = unitSupF;
         }
         else{
-            let outputTemp = inputTemp;
-            document.getElementById("output").innerHTML = outputTemp;
-            document.getElementById("unit-sup").innerHTML = unitSupC;
+            let outputTemp = inputValue;
+            output.innerHTML = outputTemp;
+            unitSup.innerHTML = unitSupC;
         }
     }
 
-    else if (document.getElementById("unit").value == "fahrenheit"){
-        if (document.getElementById("convert-to").value == "celsius"){
-            let outputTemp = ((inputTemp - 32) * 5/9).toFixed(1);
-            document.getElementById("output").innerHTML = outputTemp;
-            document.getElementById("unit-sup").innerHTML = unitSupC;
+    else if (unit.value == "fahrenheit"){
+        if (convertTo.value == "celsius"){
+            let outputTemp = ((inputValue - 32) * 5/9).toFixed(1);
+            output.innerHTML = outputTemp;
+            unitSup.innerHTML = unitSupC;
         }
         else{
-            let outputTemp = inputTemp;
-            document.getElementById("output").innerHTML = outputTemp;
-            document.getElementById("unit-sup").innerHTML = unitSupF;
+            let outputTemp = inputValue;
+            output.innerHTML = outputTemp;
+            unitSup.innerHTML = unitSupF;
         }
     }
 }
-

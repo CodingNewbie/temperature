@@ -2,6 +2,7 @@
     --background-color: #DDEDFA;
     --primary-color: #44626A;
 }
+
 *, *::before, *::after{
     box-sizing: border-box;
 }
