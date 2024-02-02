@@ -1,5 +1,6 @@
 const unitSupF = "°F";
 const unitSupC = "°C";
+const unitSupK = "°K";
 const convertBtn = document.getElementById("convert-btn");
 const inputTemp = document.getElementById("input-temp");
 const inputField = document.getElementById("input-temp");
@@ -34,6 +35,11 @@ function convertTemp(){
             output.innerHTML = outputTemp;
             unitSup.innerHTML = unitSupF;
         }
+        else if (convertTo.value == "kelvin"){
+            outputTemp = celToKel(inputValue);
+            output.innerHTML = outputTemp;
+            unitSup.innerHTML = unitSupK;
+        }
         else{
             outputTemp = inputValue;
             output.innerHTML = outputTemp;
@@ -47,10 +53,33 @@ function convertTemp(){
             output.innerHTML = outputTemp;
             unitSup.innerHTML = unitSupC;
         }
+        else if (convertTo.value == "kelvin"){
+            outputTemp = farToKel(inputValue);
+            output.innerHTML = outputTemp;
+            unitSup.innerHTML = unitSupK;
+        }
         else{
             outputTemp = inputValue;
             output.innerHTML = outputTemp;
             unitSup.innerHTML = unitSupF;
+        }
+    }
+
+    else if (unit.value == "kelvin"){
+        if (convertTo.value == "celsius"){
+            outputTemp = kelToCel(inputValue);
+            output.innerHTML = outputTemp;
+            unitSup.innerHTML = unitSupC;
+        }
+        else if (convertTo.value == "fahrenheit"){
+            outputTemp = kelToFar(inputValue);
+            output.innerHTML = outputTemp;
+            unitSup.innerHTML = unitSupF;
+        }
+        else{
+            outputTemp = inputValue;
+            output.innerHTML = outputTemp;
+            unitSup.innerHTML = unitSupK;
         }
     }
 
@@ -64,6 +93,22 @@ function celToFar(cel){
     return ((cel * (9/5) + 32)).toFixed(1);
 }
 
+function celToKel(cel){
+    return (cel + 273.15).toFixed(1);
+}
+
 function farToCel(far){
     return ((far - 32) * 5/9).toFixed(1);
+}
+
+function farToKel(far){
+    return ((far - 32) * (5/9) + 273.15).toFixed(1);
+}
+
+function kelToCel(kel){
+    return (kel - 273.15).toFixed(1);
+}
+
+function kelToFar(kel){
+    return ((kel - 273.15) * 1.8 + 32).toFixed(1);
 }
