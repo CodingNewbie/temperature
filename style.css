@@ -101,8 +101,11 @@ button{
     .temp-conversion-flex{
         flex-direction: column;
         width: 90%;
-        height: 80rem;
-        margin-top: 40rem;
+        height: auto;
+        margin: auto;
+    }
+    .main-flex{
+        height: 100%;
     }
 }
 
