@@ -13,7 +13,7 @@ const root = document.documentElement;
 
 convertBtn.addEventListener("click", convertTemp);
 
-inputField.addEventListener("keypress", function (event) {
+inputField.addEventListener("keypress", event => {
     if (event.key === "Enter") {
         convertTemp();
     }
@@ -34,16 +34,19 @@ function convertTemp(){
             outputTemp = celToFar(inputValue);
             output.innerHTML = outputTemp;
             unitSup.innerHTML = unitSupF;
+            changeIndicatorHeightC(inputValue);
         }
         else if (convertTo.value == "kelvin"){
             outputTemp = celToKel(inputValue);
             output.innerHTML = outputTemp;
             unitSup.innerHTML = unitSupK;
+            changeIndicatorHeightC(inputValue);
         }
         else{
             outputTemp = inputValue;
             output.innerHTML = outputTemp;
             unitSup.innerHTML = unitSupC;
+            changeIndicatorHeightC(inputValue);
         }
     }
 
@@ -52,16 +55,19 @@ function convertTemp(){
             outputTemp = farToCel(inputValue);
             output.innerHTML = outputTemp;
             unitSup.innerHTML = unitSupC;
+            changeIndicatorHeightF(inputValue);
         }
         else if (convertTo.value == "kelvin"){
             outputTemp = farToKel(inputValue);
             output.innerHTML = outputTemp;
             unitSup.innerHTML = unitSupK;
+            changeIndicatorHeightF(inputValue);
         }
         else{
             outputTemp = inputValue;
             output.innerHTML = outputTemp;
             unitSup.innerHTML = unitSupF;
+            changeIndicatorHeightF(inputValue);
         }
     }
 
@@ -70,23 +76,21 @@ function convertTemp(){
             outputTemp = kelToCel(inputValue);
             output.innerHTML = outputTemp;
             unitSup.innerHTML = unitSupC;
+            changeIndicatorHeightK(inputValue);
         }
         else if (convertTo.value == "fahrenheit"){
             outputTemp = kelToFar(inputValue);
             output.innerHTML = outputTemp;
             unitSup.innerHTML = unitSupF;
+            changeIndicatorHeightK(inputValue);
         }
         else{
             outputTemp = inputValue;
             output.innerHTML = outputTemp;
             unitSup.innerHTML = unitSupK;
+            changeIndicatorHeightK(inputValue);
         }
     }
-
-    indicator.classList.remove("slide-to-temp");
-    void indicator.offsetWidth;
-    indicator.classList.add("slide-to-temp");
-    root.style.setProperty("--temp-end", `${inputValue * 2}%`);
 }
 
 function celToFar(cel){
@@ -111,4 +115,25 @@ function kelToCel(kel){
 
 function kelToFar(kel){
     return ((kel - 273.15) * 1.8 + 32).toFixed(1);
+}
+
+function changeIndicatorHeightC(inputC){
+    indicator.classList.remove("slide-to-temp");
+    void indicator.offsetWidth;
+    root.style.setProperty("--temp-end", `${inputC * 2}%`);
+    indicator.classList.add("slide-to-temp");
+}
+
+function changeIndicatorHeightF(inputF){
+    indicator.classList.remove("slide-to-temp");
+    void indicator.offsetWidth;
+    root.style.setProperty("--temp-end", `${inputF * .82}%`);
+    indicator.classList.add("slide-to-temp");
+}
+
+function changeIndicatorHeightK(inputK){
+    indicator.classList.remove("slide-to-temp");
+    void indicator.offsetWidth;
+    root.style.setProperty("--temp-end", `${inputK * .31}%`);
+    indicator.classList.add("slide-to-temp");
 }
